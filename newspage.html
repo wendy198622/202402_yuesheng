@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<title>岳陞開發</title>
+	<meta name="author" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="Resource-type" content="" />
+	<!-- <link rel="icon" href="img/logo.ico"> -->
+	<!-- <meta property="og:image" content="../img/index/1200x628.jpg"> -->
+
+	<!-- css -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/pagination.css" />
+	<link rel="stylesheet" type="text/css" href="css/slick.css" />
+	<link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+	<link rel="stylesheet" type="text/css" href="css/animate.css" />
+	<link rel="stylesheet" type="text/css" href="css/news.css" />
+	<!-- js -->
+    <!-- <script src="js/jquery-3.6.0.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!-- <script src="http://code.jquery.com/jquery-3.6.1.js"></script> -->
+	<script src="js/pagination.js"></script>
+	<script src="js/slick.js"></script>
+	<script src="js/wow.min.js"></script>
+</head>
+
+<body>
+	<header id="header"></header>
+
+	<section>
+        <!-- <div class="page_topic">
+            <h3>最新消息</h3>
+            <h6 class="gray">news</h6>
+        </div> -->
+		<div class="theme page_newspage">
+            <div class="container">
+                <div class="newspage_content">
+                    <div class="info">
+                        <div class="date">2024.01.20</div>
+                        <div class="category">媒體報導</div>
+                    </div>
+                    <h4>5 坪也可以五臟俱全！簡單卻收放自如，台北迷你公寓獲英國室內設計獎</h4>
+                    <div class="photo">
+                        <img src="img/newspage_img1.jpg" alt="">
+                    </div>
+                    <p>台灣室內設計工作室 A Little Design，去年將 5 坪大的鋼琴教室改裝成機能性十足的迷你公寓，近日獲得英國 Dezeen 室內設計獎小型室內設計類別第一名。</p>
+                    <p>評審團很欣賞 A Little Design 設計這狹小有限的空間時，所展現的高超技巧。他們也稱讚設計者「透過簡單、收放自如的技巧，創造出實用、宜居的生活空間。」公寓主人頻繁出國洽公，也常駐外多時。在這樣的生活形態下，住家離公司近比起擁有大空間更加重要，她因此選擇了位在市中心的這間小房子。</p>
+                    <p>「雖然業主不需要大空間，但在重新設計之前，這間 5.3 坪的小公寓實在擠不下一張雙人床、客廳和足夠的收納空間。」A Little Design 表示。此外，空間上的比例分配也是一大問題，廁所佔比過大，廚房則是小到連冰箱都放不下。</p>
+                    <p>A Little Design 團隊重新配置，將廁所與廚房調換過來，玄關則和廚房連成一氣，創造出呼吸的空間。</p>
+                    <h5>小標題小標題小標題小標題</h5>
+                    <p>公寓主人頻繁出國洽公，也常駐外多時。在這樣的生活形態下，住家離公司近比起擁有大空間更加重要，她因此選擇了位在市中心的這間小房子。</p>
+                    <div class="photo">
+                        <img src="img/newspage_img2.jpg" alt="">
+                    </div>
+                    <h5>小標題小標題小標題小標題</h5>
+                    <p>公寓主人頻繁出國洽公，也常駐外多時。在這樣的生活形態下，住家離公司近比起擁有大空間更加重要，她因此選擇了位在市中心的這間小房子。</p>
+                </div>
+                <div class="link_small">
+                    <a href="news.html">看其他消息</a>
+                </div>
+            </div>
+        </div>
+	</section>
+
+	
+    <footer id="footer"></footer>
+    <!-- <div id="wrapper">
+        <section>
+            <div class="data-container"></div>
+            <div id="pagination-news"></div>
+        </section>
+    </div> -->
+
+</body>
+<script>
+	$(document).ready(function () {
+		new WOW().init();
+
+		$('#header').load('page/header.html');
+		$('#footer').load('page/footer.html');
+
+		$('.project_slider').slick({
+			dots: false,
+			arrows: true,
+			infinite: true,
+			slidesToShow: 2,
+			slidesToScroll: 1,
+			asNavFor: '.project_slider_nav',
+			prevArrow: '<button class="prev"><a href="#0"><span class="material-icons">arrow_back</span></a></button>',
+			nextArrow: '<button class="next"><a href="#0"><span class="material-icons">arrow_forward</span></a></button>',
+		});
+		$('.project_slider_nav').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			asNavFor: '.project_slider',
+			dots: false,
+			fade: true,
+			focusOnSelect: true
+        });
+
+
+	 	//box height
+		var max = 0;
+		$('.js_height').each(function (T) {
+			T = $(this).outerHeight(), T > max && (max = T);
+		}).outerHeight(max);	
+		
+    })
+</script>
+</html>

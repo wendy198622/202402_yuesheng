@@ -1,0 +1,214 @@
+@import '_setting';
+@import '_header';
+@import '_footer';
+
+
+.titlebox{
+    h2{
+    }
+    h4{}
+    span{
+        font-size: 120px;
+        line-height: 0.4;
+        font-family: $_font1;
+        font-weight: 800;
+        text-transform: uppercase;
+        opacity: 0.1;
+        @media (max-width:1280px){
+            font-size: 9vw;
+        }
+    }
+    p{
+        line-height: 1.2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        box-sizing:border-box;
+    }
+}
+.infobox{
+    h2{
+        position: relative;
+        padding-left: 160px;
+        margin-top: 40px;
+        &:before{
+            content: "";
+            width: 140px;
+            height: 1px;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: $_color1;
+        }
+    }
+    h4{
+        margin-top: 80px;
+        color: #8C6B36;
+    }
+    p{
+        line-height: 2;
+        margin-top: 20px;
+
+    }
+}
+
+.aboutus_kv{
+    padding: 160px 0 320px;
+    background: url(../img/abooutus_img1.jpg) center top no-repeat;
+    background-size: cover;
+}
+.aboutus_content{
+    padding: 160px 0;
+}
+.aboutus_contactus{
+    background: #F4F5F6;
+    padding: 60px 0;
+    .home_topic{
+        text-align: center;
+    }
+    .contactus_content{
+        margin-top: 40px;
+        .contactus_form{
+            overflow: hidden;
+            p{
+                font-size: 16px;
+                line-height: 2;
+                font-family: $_font1;
+                font-weight: 200;
+                letter-spacing: 1px;
+                text-align: center;
+                margin-bottom: 40px;
+                @media (max-width:1080px){
+                    text-align: center;
+                }
+                span{
+                    color: $_color1;
+                    opacity: 0.6;
+                    font-size: 14px;
+                    font-family: $_font1;
+                    @media (max-width:1080px){
+                        display: block;
+                        margin-top: 10px;
+                    }
+                }
+            }
+            .item{
+                width: calc((100% - 20px) / 2);
+                float: left;
+                padding: 8px 0;
+                background: #fff;
+                margin-bottom: 20px;
+                &.w100{
+                    width: 100%;
+                }
+                &.nobg{
+                    background: transparent;
+                }
+                label{
+                    // width: 124px;
+                    float: left;
+                    font-size: 18px;
+                    line-height: 2;
+                    font-family: $_font1;
+                    font-weight: 300;
+                    letter-spacing: 1px;
+                }
+                select, input{
+                    width: 100%;
+                    height: 36px;
+                    float: right;
+                    background: transparent;
+                    outline: 0;
+                    border: 0;
+                    padding: 0 14px;
+                    font-size: 16px;
+                    font-family: $_font1;
+                }
+                textarea{
+                    width: 100%;
+                    height: 100px;
+                    background: transparent;
+                    outline: 0;
+                    border: 0;
+                    padding: 0 10px;
+                    resize: none;
+                    @media (max-width:1080px){
+                        height: 100px;
+                    }
+                }
+                input, textarea{
+                    padding: 0 18px;
+                }
+                ::placeholder{
+                    // opacity: 0.4;
+                    font-size: 16px;
+                    font-family: $_font1;
+                }
+                input[type="checkbox"]{
+                    border: 1px solid $_color1;
+                    width: 20px;
+                    height: 20px;
+                    float: left;
+                    margin-top: 8px;
+                    padding: 0;
+
+                    &:checked{
+                        width: 20px;
+                        height: 20px;
+                        background: url(../img/check.svg) 2px 2px no-repeat #DBC095;
+                        background-size: 16px 16px;
+                        border: 0;
+                    }
+                }
+                .checktxt{
+                    width: calc(100% - 32px);
+                    float: right;
+                    a{
+                        color: $_color1;
+                        opacity: 0.6;
+                        font-size: 14px;
+                        display: inline-block;
+                        margin-left: 6px;
+                    }
+                }
+            }
+            button.send{
+                width: 180px;
+                display: block;
+                margin: 0 auto;
+                font-size: 24px;
+                line-height: 2.4;
+                background: $_color1;
+                color: #fff;
+                text-transform: uppercase;
+                padding: 0;
+                font-family: $_font1;
+                font-weight: 600;
+                letter-spacing: 4px;
+                transition: all .3s;
+                &:hover{
+                    cursor: pointer;
+                    background: #1A1816;
+                }
+            }
+        }
+        .contactus_photo{
+            width: calc(100% - 576px);
+            height: 564px;
+            float: right;
+            background: url(../img/contactus.jpg) center top no-repeat;
+            background-size: cover;
+            animation: photo_ani 3s 1.5s both;
+            @media (max-width:1080px){
+                width: 100%;
+                height: 0;
+                padding-bottom: 76%;
+                float: unset;
+            }
+        }
+    }
+}

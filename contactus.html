@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<title>岳陞開發</title>
+	<meta name="author" content="" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="Resource-type" content="" />
+	<!-- <link rel="icon" href="img/logo.ico"> -->
+	<!-- <meta property="og:image" content="../img/index/1200x628.jpg"> -->
+
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/slick.css" />
+	<link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+	<link rel="stylesheet" type="text/css" href="css/animate.css" />
+	<link rel="stylesheet" type="text/css" href="css/contactus.css" />
+	<!-- js -->
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/slick.js"></script>
+	<script src="js/wow.min.js"></script>
+</head>
+
+<body>
+	<header id="header"></header>
+
+	<section>
+        <div class="page_topic">
+            <h3>聯絡我們</h3>
+            <h6 class="gray">contact us</h6>
+        </div>
+		<div class="theme page_contactus">
+			<div class="contactus_content">
+				<div class="container">
+					<div class="contactus_form">
+						<p class="wow fadeInUp" data-wow-duration="2s" data-wow-delay=".3s">若您有購屋及建案相關問題，
+							歡迎您填寫表單與我們聯絡。<span>* 欄位表示必填</span></p>
+						<div class="item w100 wow fadeInUp" data-wow-delay="1.2s">
+							<!-- <label for="name">預約個案<span>*</span></label> -->
+							<select>
+								<option>* 預約個案</option>
+								<option>AAA</option>
+								<option>BBB</option>
+								<option>CCC</option>
+							</select>
+						</div>
+						<div class="item mr20 wow fadeInUp" data-wow-delay=".6s">
+							<!-- <label for="name">姓名<span>*</span></label> -->
+							<input type="text" v-model="name" name="name" placeholder="* 姓名" required />
+						</div>
+						<div class="item wow fadeInUp" data-wow-delay=".9s">
+							<!-- <label for="phone">連絡電話<span>*</span></label> -->
+							<input type="text" v-model="phone" name="phone" placeholder="* 連絡電話" required />
+						</div>
+						<div class="item mr20 wow fadeInUp" data-wow-delay="1.5s">
+							<!-- <label for="name">聯絡時段<span>*</span></label> -->
+							<select>
+								<option>聯絡時段</option>
+								<option>8:00-12:00</option>
+								<option>12:00-17:00</option>
+								<option>17:00-22:00</option>
+							</select>
+						</div>
+						<div class="item wow fadeInUp" data-wow-delay="1.8s">
+							<!-- <label for="email">E-mail <span>*</span></label> -->
+							<input type="text" v-model="email" name="email" placeholder="* E-mail" required />
+						</div>
+						<div class="item w100 wow fadeInUp" data-wow-delay="2.1s">
+							<!-- <label for="message">留言</label> -->
+							<textarea id="message" v-model="message" name="message" placeholder="留言" required></textarea>
+						</div>
+						<div class="item w100 nobg wow fadeInUp" data-wow-delay="2.4s">
+							<input type="checkbox" id="checkbox" name="checkbox" value="checkbox">
+							<label for="checkbox" class="checktxt">我同意通過電話方式與我聯絡 <a href="#">隱私權政策規範</a></label>
+						</div>
+						<button class="send wow fadeInUp" data-wow-delay="2.7s">送出</button>
+					</div>
+				</div>
+			</div>
+        </div>
+        <div class="contactus_map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.2582289782!2d121.30066007617611!3d24.99133997784416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681f1caf9dac59%3A0x6689370d10edbeb2!2zMzMw5qGD5ZyS5biC5qGD5ZyS5Y2A5b6p6IiI6LevNDE45be3MjLomZ8!5e0!3m2!1szh-TW!2stw!4v1708197443402!5m2!1szh-TW!2stw" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+	</section>
+
+	<div class="popup popup_send">
+		<div class="popup_content popup_message">您已送出資訊，我們將與您聯繫</div>
+	</div>
+	
+	<footer id="footer"></footer>
+
+</body>
+<script>
+	$(document).ready(function () {
+		new WOW().init();
+
+		$('#header').load('page/header.html');
+		$('#footer').load('page/footer.html');
+
+		$('.project_slider').slick({
+			dots: false,
+			arrows: true,
+			infinite: true,
+			slidesToShow: 2,
+			slidesToScroll: 1,
+			asNavFor: '.project_slider_nav',
+			prevArrow: '<button class="prev"><a href="#0"><span class="material-icons">arrow_back</span></a></button>',
+			nextArrow: '<button class="next"><a href="#0"><span class="material-icons">arrow_forward</span></a></button>',
+		});
+		$('.project_slider_nav').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			asNavFor: '.project_slider',
+			dots: false,
+			fade: true,
+			// centerMode: true,
+			focusOnSelect: true
+		});
+
+		//box height
+		var max = 0;
+		$('.js_height').each(function (T) {
+			T = $(this).outerHeight(), T > max && (max = T);
+		}).outerHeight(max);	
+		
+	})
+
+</script>
+</html>
