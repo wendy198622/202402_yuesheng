@@ -6,6 +6,18 @@
 .home_topic{
     text-align: center;
 }
+.mask{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 320px);
+    height: 100%;
+    background: rgba(0,0,0,0.05);
+    z-index: 5;
+    @media (max-width:1380px){
+        width: calc(100% - 240px);
+    }
+}
 .home_kv{
     position: relative;
     width: 100%;

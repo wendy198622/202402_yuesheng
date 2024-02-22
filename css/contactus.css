@@ -423,6 +423,7 @@ header {
   width: 100%;
   padding: 0px 100px;
   overflow: hidden;
+  position: relative;
 }
 
 @media (max-width: 1380px) {
@@ -442,6 +443,8 @@ header .logo {
 header nav {
   float: right;
   overflow: hidden;
+  position: relative;
+  z-index: 10;
 }
 
 header nav ul {
