@@ -731,6 +731,10 @@ footer .copyright {
   border-bottom: 2px solid #8C6B36;
 }
 
+.page_news .filter li:hover {
+  cursor: pointer;
+}
+
 .page_news .news_content {
   padding: 0 0 120px;
   overflow: hidden;

@@ -315,6 +315,17 @@
 			focusOnSelect: true
         });
 
+        $('.filter li').click(function() {
+            $(this).toggleClass("active");
+            $(this).siblings().removeClass("active");
+        });
+
+        $('.send').on('click', function () {
+            $('.popup_send').addClass('is_acted');
+            setTimeout(() => {
+                $('.popup_send').removeClass('is_acted');
+            }, 6000)
+        });
 
 	 	//box height
 		var max = 0;
@@ -383,9 +394,10 @@
 
         $('#pagingBox').children().css('display', 'none').slice(start_from, end_on).css('display', 'block');
 
-        $('.page_link[longdesc=' + page_num +']').addClass('active_page').siblings('.active_page').removeClass('active_page');
+        $('.page_link[longdesc=' + page_num + ']').addClass('active_page').siblings('.active_page').removeClass('active_page');
 
         $('#current_page').val(page_num);
     }
+    
 </script>
 </html>
