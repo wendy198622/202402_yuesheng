@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css2?family=Bellefair&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;500&family=Noto+Serif+TC:wght@300;400;500;600;700;900&display=swap");
+.privacy_theme {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #000;
+}
+
+.privacy_theme h2 {
+  text-align: center;
+  font-size: 36px;
+  margin: 40px;
+}
+
+.privacy_theme h3 {
+  font-size: 24px;
+  margin-top: 40px;
+}
+
+.privacy_theme p {
+  text-align: justify;
+  font-size: 20px;
+  margin-top: 20px;
+  color: #787878;
+}
+/*# sourceMappingURL=privacy.css.map */
