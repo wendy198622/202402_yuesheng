@@ -19,9 +19,7 @@
 	<link rel="stylesheet" type="text/css" href="css/animate.css" />
 	<link rel="stylesheet" type="text/css" href="css/works.css" />
 	<!-- js -->
-    <!-- <script src="js/jquery-3.6.0.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <!-- <script src="http://code.jquery.com/jquery-3.6.1.js"></script> -->
 	<script src="js/pagination.js"></script>
 	<script src="js/slick.js"></script>
 	<script src="js/wow.min.js"></script>
@@ -37,7 +35,11 @@
         </div> -->
 		<div class="theme page_workspage">
             <div class="workspage_info">
-                <div class="photo"><img src="img/projectspage_kvbg.jpg" alt=""></div>
+                <div class="photo theme_image_slider">
+                    <img src="img/projectspage_kvbg.jpg" alt="">
+                    <img src="img/projectspage_kvbg.jpg" alt="">
+                    <img src="img/projectspage_kvbg.jpg" alt="">
+                </div>
                 <div class="info">
                     <ul>
                         <li class="wow fadeInUp" data-wow-duration="2s" data-wow-delay=".2s">
@@ -154,96 +156,38 @@
 		$('#header').load('page/header.html');
 		$('#footer').load('page/footer.html');
 
-		$('.project_slider').slick({
+		// $('.project_slider').slick({
+		// 	dots: false,
+		// 	arrows: true,
+		// 	infinite: true,
+		// 	slidesToShow: 2,
+		// 	slidesToScroll: 1,
+		// 	asNavFor: '.project_slider_nav',
+		// 	prevArrow: '<button class="prev"><a href="#0"><span class="material-icons">arrow_back</span></a></button>',
+		// 	nextArrow: '<button class="next"><a href="#0"><span class="material-icons">arrow_forward</span></a></button>',
+		// });
+		// $('.project_slider_nav').slick({
+		// 	slidesToShow: 1,
+		// 	slidesToScroll: 1,
+		// 	asNavFor: '.project_slider',
+		// 	dots: false,
+		// 	fade: true,
+		// 	focusOnSelect: true
+        // });
+
+
+
+		$('.theme_image_slider').slick({
 			dots: false,
-			arrows: true,
-			infinite: true,
-			slidesToShow: 2,
-			slidesToScroll: 1,
-			asNavFor: '.project_slider_nav',
-			prevArrow: '<button class="prev"><a href="#0"><span class="material-icons">arrow_back</span></a></button>',
-			nextArrow: '<button class="next"><a href="#0"><span class="material-icons">arrow_forward</span></a></button>',
-		});
-		$('.project_slider_nav').slick({
+			arrows: false,
+			infinite: false,
+            autoplay: true,
 			slidesToShow: 1,
 			slidesToScroll: 1,
-			asNavFor: '.project_slider',
-			dots: false,
-			fade: true,
-			focusOnSelect: true
-        });
-
-
-	 	//box height
-		var max = 0;
-		$('.js_height').each(function (T) {
-			T = $(this).outerHeight(), T > max && (max = T);
-		}).outerHeight(max);	
+		});
 		
     })
 
 
-    jQuery(document).ready(function () {
-
-        var show_per_page = 5; 
-        
-        var number_of_items = $('#pagingBox').children().size();
-        
-        var number_of_pages = Math.ceil(number_of_items/show_per_page);
-
-        $('#current_page').val(0);
-        $('#show_per_page').val(show_per_page);
-        var navigation_html = '<div class="previous_link"><a href="javascript:previous();"><span class="material-icons">chevron_left</span></a></div>';
-        var current_link = 0;
-        while(number_of_pages > current_link){
-            navigation_html += '<div class="page_link"><a href="javascript:go_to_page(' + current_link +')" longdesc="' + current_link +'">'+ (current_link + 1) +'</a></div>';
-            current_link++;
-        }
-        navigation_html += '<div class="next_link"><a href="javascript:next();"><span class="material-icons">chevron_right</span></a></div>';
-
-        $('#page_navigation').html(navigation_html);
-
-        $('#page_navigation .page_link:first').addClass('active_page');
-
-        $('#pagingBox').children().css('display', 'none');
-
-        $('#pagingBox').children().slice(0, show_per_page).css('display', 'block');
-
-    });
-
-
-
-    //Pagination JS
-
-    function previous(){
-
-        new_page = parseInt($('#current_page').val()) - 1;
-        if($('.active_page').prev('.page_link').length==true){
-        go_to_page(new_page);
-        }
-
-    }
-
-    function next(){
-        new_page = parseInt($('#current_page').val()) + 1;
-        if($('.active_page').next('.page_link').length==true){
-            go_to_page(new_page);
-        }
-
-    }
-    function go_to_page(page_num){
-    
-        var show_per_page = parseInt($('#show_per_page').val());
-    
-        start_from = page_num * show_per_page;
-    
-        end_on = start_from + show_per_page;
-
-        $('#pagingBox').children().css('display', 'none').slice(start_from, end_on).css('display', 'block');
-
-        $('.page_link[longdesc=' + page_num +']').addClass('active_page').siblings('.active_page').removeClass('active_page');
-
-        $('#current_page').val(page_num);
-    }
 </script>
 </html>
