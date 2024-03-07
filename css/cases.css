@@ -176,20 +176,8 @@ input, button, textarea {
   outline: none !important;
 }
 
-.slick-slider {
-  position: relative;
-}
-
-.slick-slider.slick-dotted.slick-slider {
-  margin-bottom: 0;
-}
-
-.slick-slider.slick-dotted.slick-slider .slick-slide > div > div {
-  margin-bottom: -5px;
-}
-
 .slick-slider.slick-dotted.slick-slider .slick-dots {
-  bottom: 0%;
+  bottom: 16px;
 }
 
 .slick-slider.slick-dotted.slick-slider .slick-dots li {
@@ -202,20 +190,18 @@ input, button, textarea {
   width: 8px;
   height: 8px;
   padding: 2px;
-  background-color: #c9a063;
+  background-color: #000;
+  border-radius: 10px;
+  opacity: 0.5;
 }
 
 .slick-slider.slick-dotted.slick-slider .slick-dots li button:before, .slick-slider.slick-dotted.slick-slider .slick-dots li button:after {
   display: none;
 }
 
-.slick-slider.slick-dotted.slick-slider .slick-dots li.slick-active {
-  width: 52px;
-}
-
 .slick-slider.slick-dotted.slick-slider .slick-dots li.slick-active button {
-  width: 50px;
   margin-right: 2px;
+  opacity: 1;
 }
 
 .slick-slider button.prev {

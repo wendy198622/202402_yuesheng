@@ -141,17 +141,17 @@ input, button, textarea{
 
 
 .slick-slider{
-    position: relative;
+//     position: relative;
 
     &.slick-dotted.slick-slider{
-        margin-bottom: 0;
+//         margin-bottom: 0;
 
-        .slick-slide > div > div{
-            margin-bottom: -5px;
-        }
+//         .slick-slide > div > div{
+//             margin-bottom: -5px;
+//         }
     
         .slick-dots{
-            bottom: 0%;
+            bottom: 16px;
 
             li{
                 width: 10px;
@@ -162,7 +162,9 @@ input, button, textarea{
                     width: 8px;
                     height: 8px;
                     padding: 2px;
-                    background-color: #c9a063;
+                    background-color: #000;
+                    border-radius: 10px;
+                    opacity: 0.5;
                     &:before,
                     &:after{
                         display: none;
@@ -170,11 +172,12 @@ input, button, textarea{
                 }
 
                 &.slick-active{
-                    width: 52px;
+                    // width: 52px;
                     
                     button{
-                        width: 50px;
+                        // width: 50px;
                         margin-right: 2px;
+                        opacity: 1;
                     }
                 }
             }
