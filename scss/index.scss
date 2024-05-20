@@ -65,13 +65,23 @@
             margin-left: 100px;
             position: relative;
             @media (max-width:960px){
-                width: 160%;
-                margin-left: 20px;
+                width: 100%;
+                margin-left: 0;
             }
             .project_slider{
                 padding-left: 160px;
                 @media (max-width:960px){
-                    padding-left: 80px;
+                    padding-left: 0;
+                }
+                button.prev{
+                    left: 20px;
+                    bottom: -100px;
+                    
+                }
+                button.next{
+                    left: auto;
+                    right: 20px;
+                    bottom: -100px;
                 }
                 .slick-slide{ 
                     margin-bottom: -6px;
@@ -82,6 +92,9 @@
                 }
                 .item{
                     padding-left: 40px;
+                    @media (max-width:960px){
+                        padding: 0 20px;
+                    }
                     .photo{
                         // width: 80%;
                     }
@@ -91,13 +104,24 @@
                 position: absolute;
                 bottom: 60px;
                 left: 0;
+                @media (max-width:960px){
+                    width: calc(100% - 100px);
+                    max-width: 320px;
+                    position: static;
+                    bottom: unset;
+                    padding: 0 20px;
+                    text-align: center;
+                    margin: 0 auto;
+                    // outline: 1px solid red;
+                }
                 .info{
                     width: 400px;
                     background: rgba(219,192,149,0.8);
                     padding: 40px;
                     @media (max-width:960px){
-                        width: 320px;
-                        padding: 32px;
+                        width: 100%;
+                        padding: 32px 0;
+                        background: transparent;
                     }
                     h3{
                         font-weight: 600;
@@ -109,9 +133,16 @@
                     }
                     .link_large{
                         width: 100%;
-                        margin-top: 20px;
+                        margin: 20px auto 0;
+                        @media (max-width:960px){
+                            width: calc(100% - 40px);
+                        }
                         a{
                             text-align: center;
+                            @media (max-width:960px){
+                                font-size: 14px;
+                                letter-spacing: 2px;
+                            }
                         }
                     }
                 }
