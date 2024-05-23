@@ -58,11 +58,50 @@
 
 .aboutus_kv{
     padding: 160px 0 320px;
-    background: url(../img/abooutus_img1.jpg) center top no-repeat;
+    background: url(../img/abooutus_bg.jpg) center top no-repeat;
     background-size: cover;
 }
 .aboutus_content{
     padding: 160px 0;
+    @media (max-width:960px){
+        padding: 80px 0;
+    }
+    p{
+        line-height: 1.8;
+        letter-spacing: 2px;
+    }
+}
+.aboutus_chairman{
+    padding: 0;
+    .container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        @media (max-width:960px){
+            flex-direction: column;
+        }
+    }
+    .aboutus_content{
+        width: 50%;
+        @media (max-width:960px){
+            width: 100%;
+            padding: 40px 0 40px;
+        }
+        .infobox{
+            h4{
+                margin-top: 32px;
+            }
+        }        
+    }
+    .aboutus_photo{
+        width: 50%;
+        @media (max-width:960px){
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }       
+        
+    }
 }
 .aboutus_contactus{
     background: #F4F5F6;
